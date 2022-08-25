@@ -69,12 +69,21 @@ public class Product {
 
 
     public double getIVA(){
-     switch (typeProduct){
+        //nueva metodologia
+        double iva=switch (typeProduct){
+            case VIVERES ->  getValue() *0.12;
+            case  LICORES ->  getValue() *0.19;
+            case  MEDICAMENTOS ->  getValue() *0.16;
+            default -> 0.0;
+        };
+        return iva;
+
+     /*switch (typeProduct){
          case VIVERES : return getValue() *0.12;
          case  LICORES: return getValue() *0.19;
          case  MEDICAMENTOS: return getValue() *0.16;
      }
-     return 0.0;
+     return 0.0;*/
     }
 
     @Override
