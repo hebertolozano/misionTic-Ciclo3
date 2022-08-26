@@ -4,15 +4,15 @@ public class Product {
     private String idProduct;
     private String description;
     private double value;
-    private int cant;
+    private int stock;
     private byte stockMin;
     private typeProduct typeProduct;
 
-    public Product(String idProduct, String description, double value, int cant, byte stockMin, logic.typeProduct typeProduct) {
+    public Product(String idProduct, String description, double value, int stock, byte stockMin, logic.typeProduct typeProduct) {
         this.idProduct = idProduct;
         this.description = description;
         this.value = value;
-        this.cant = cant;
+        this.stock = stock;
         this.stockMin = stockMin;
         this.typeProduct = typeProduct;
     }
@@ -42,12 +42,11 @@ public class Product {
         this.value = value;
     }
 
-    public int getCant() {
-        return cant;
+    public int getStock() {
+        return stock;
     }
-
-    private void setCant(int cant) {
-        this.cant = cant;
+    public void setStock(int stock) {
+        this.stock = stock;
     }
 
     public byte getStockMin() {
@@ -92,7 +91,7 @@ public class Product {
                 "idProduct='" + idProduct + '\'' +
                 ", description='" + description + '\'' +
                 ", value=" + value +
-                ", cant=" + cant +
+                ", stock=" + stock +
                 ", stockMin=" + stockMin +
                 ", typeProduct=" + typeProduct +
                 '}';
